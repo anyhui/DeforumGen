@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deforum生成</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Deforum生成</h1>
+    <form>
+        <div id="inputs">
+            <div>
+                <label>帧数：</label>
+                <input type="text" name="name[]" value="0" required>
+                <label>Prompt指令：</label>
+                <textarea name="value[]" required></textarea>
+                <button type="button" onclick="removeInput(this)">删除</button>
+                <button type="button" onclick="translateInput(this)">翻译</button>
+                <label>译文：</label>
+                <textarea name="translation[]" readonly></textarea>
+            </div>
+        </div>
+    </form>
+    <div class="button-container">
+        <div class="buttons">
+            <label>默认帧数增加数值：</label>
+            <input type="text" id="default-increment" value="30">
+            <button type="button" onclick="addInput()">增加</button>
+            <button type="button" onclick="generateJSON()">生成</button>
+            <button type="button" onclick="readJSON()">读取</button>
+            <button type="button" onclick="copyJSON()">复制</button>
+        </div>
+    </div>
+    <textarea id="result" rows="10" cols="50" wrap="soft"></textarea>
+    <script src="script.js"></script>
+    <script src="FileSaver.js"></script>
+</body>
+</html>
